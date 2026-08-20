@@ -32,6 +32,21 @@ app.get("/:index", (req, res)=>{
     })
 })
 
+app.patch("/:index", (req, res)=>{
+
+    const index = req.params.index
+    const des = req.body.description
+    const title = req.body.title
+
+    notes[index].description = des
+    notes[index].title = title
+
+    res.status(200).json({
+        "message":"note deleted successfully",
+        "notes":notes
+    })
+})
+
 
 
 module.exports = app
