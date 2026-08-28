@@ -42,7 +42,7 @@ app.patch("/:index", (req, res)=>{
     notes[index].title = title
 
     res.status(200).json({
-        "message":"note deleted successfully",
+        "message":"note added successfully",
         "notes":notes
     })
 })
