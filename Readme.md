@@ -4,7 +4,7 @@
 
 - npm init -y
 - npm i express mongoose
-- folder structure src -> app.js, db -> db.js
+- folder structure src -> app.js, db -> db.js, models -> note.model.js
 - npx nodemon server.js : for continuous running of server without restarting it.
 
 
