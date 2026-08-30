@@ -13,3 +13,6 @@
 - add a .env files for keeping secrets and passwords.
 - add .gitignore file to untrack the node modules and .env and other files that not supposed to be tracked using git.
 
+## Resources
+- imagekit : cloude storage provider
+
