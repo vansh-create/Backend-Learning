@@ -1,15 +1,19 @@
 const express = require("express")
+const uploadFile = require("./services/storage.service")
 const postModel = require("./models/post.model")
+const multer = require("multer")
+
+const upload = multer({storage : multer.memoryStorage()})
 const app = express();
 
 app.use(express.json())
 
-app.post("/create-post", async (req, res) => {
-    const img = req.body.img
+app.post("/create-post", upload.single("img") , async (req, res) => {
     const caption = req.body.caption
+    const img = await uploadFile(req.file.buffer)
 
     await postModel.create({
-        img: img,
+        img: img.url,
         caption: caption
     })
 
