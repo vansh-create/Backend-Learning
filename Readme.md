@@ -18,3 +18,9 @@
 - multer : middleware for form data
 - dotenv : for using env variables
 
+# Authentication System
+
+- Validation
+- Verification
+- Authentication
+- Authorization
