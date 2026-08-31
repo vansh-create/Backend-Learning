@@ -18,9 +18,14 @@
 - multer : middleware for form data
 - dotenv : for using env variables
 
-# Authentication System
+## Authentication System
 
 - Validation
 - Verification
 - Authentication
 - Authorization
+
+
+## Folder structure
+
+src -> routes -> auth.routes.js | controllers -> auth.controller.js | models -> user.model.js | app.js
