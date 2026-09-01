@@ -17,6 +17,7 @@
 - imagekit : cloude storage provider
 - multer : middleware for form data
 - dotenv : for using env variables
+- cookieparser : for cookie storage
 
 ## Authentication System
 
