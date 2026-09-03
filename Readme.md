@@ -18,6 +18,7 @@
 - multer : middleware for form data
 - dotenv : for using env variables
 - cookieparser : for cookie storage
+- bcryptjs : for hashing.
 
 ## Authentication System
 
