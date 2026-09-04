@@ -30,4 +30,4 @@
 
 ## Folder structure
 
-src -> routes -> auth.routes.js | controllers -> auth.controller.js | models -> user.model.js | app.js
+src -> routes -> auth.routes.js | controllers -> auth.controller.js | models -> user.model.js | app.js | services -> xyz.services.js
