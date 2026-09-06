@@ -33,7 +33,7 @@ async function createAlbum(req, res) {
         musics: musics,
         artist: req.user.id
     })
-    
+
     res.status(201).json({
         "message": "Album Created Successfully.",
         "album": album
@@ -41,5 +41,59 @@ async function createAlbum(req, res) {
 
 }
 
-module.exports = { createMusic, createAlbum }
+async function getMusic(req, res) {
+
+
+    try {
+        const music = await musicModel.find().populate("artist", "username")
+
+        res.status(200).json({
+            "message": "Music Fetched Successfully.",
+            "Music": music
+        })
+    } catch (error) {
+        res.status(404).json({
+            "message": "Error Occoured."
+        })
+    }
+}
+
+async function getAlbum(req, res) {
+
+
+    try {
+        const album = await albumModel.find().select("title artist")
+
+        res.status(200).json({
+            "message": "Album Fetched Successfully.",
+            "Music": album
+        })
+    } catch (error) {
+        res.status(404).json({
+            "message": "Error Occoured."
+        })
+    }
+}
+
+async function getAlbumMusic(req, res) {
+
+    const id = req.params.id
+
+    try {
+        const album = await albumModel.findOne({_id: id}).populate("artist musics",)
+
+        res.status(200).json({
+            "message": "Album Music Fetched Successfully.",
+            "Music": album
+        })
+    } catch (error) {
+        res.status(404).json({
+            "message": "Error Occoured."
+        })
+    }
+}
+
+
+
+module.exports = { createMusic, createAlbum, getMusic, getAlbum, getAlbumMusic }
 
