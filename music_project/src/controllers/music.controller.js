@@ -80,7 +80,10 @@ async function getAlbumMusic(req, res) {
     const id = req.params.id
 
     try {
-        const album = await albumModel.findOne({_id: id}).populate("artist musics",)
+        const album = await albumModel.findOne({_id: id})
+        // .limit(2)
+        // .skip(1)
+        .populate("artist musics",)
 
         res.status(200).json({
             "message": "Album Music Fetched Successfully.",
